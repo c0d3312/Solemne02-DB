@@ -40,6 +40,6 @@ Este repositorio contiene el código fuente y la documentación para el diseño 
 4. Configurar variables de entorno:
    Crear un archivo llamado ".env" en la raíz del proyecto (este archivo debe estar ignorado en Git por seguridad) y agregar la cadena de conexión a MongoDB Atlas:
       '''env
-       MONGO_URI="mongodb+srv://<usuario><password>@<cluster>.mongodb.net/retryWrites=true&w=majority"
+       mongosh "mongodb+srv://clustersolemne02db.ebgilud.mongodb.net/" --apiVersion 1 --username <db_username>
 5. Ejecutar los scripts
    python src/06_main_runner.py
