@@ -2,7 +2,7 @@
 
 Este repositorio contiene el código fuente y la documentación para el diseño e implementación de un sistema de gestión de datos NoSQL basado en MongoDB. El objetivo es centralizar la información de espacios académicos, dispositivos IoT, mediciones ambientales heterogéneas y alertas de un campus universitario.
 
-#Distribución de equipo:
+# Distribución de equipo:
 - Adrián Mancilla Carter: Arquitectura del proyecto, conexión a MongoDB y fundamentación teórico. (SCRUM MASTER)
 - Ignacio Ampuero: Modelado de datos, seeding masivo de espacio y dispositivos.
 - Felipe González: Ingesta de mediciones ambientales y operaciones CRUD (Update/Delete).
@@ -24,6 +24,7 @@ Este repositorio contiene el código fuente y la documentación para el diseño 
     ├── 04_query_filters.py    # Consultas avanzadas
     ├── 05_aggregations.py     # Pipelines de agregación
     └── 06_main_runner.py      # Orquestador de ejecución
+    
 
 # Requisitos:
 - Python 3.11.+
