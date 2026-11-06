@@ -11,31 +11,20 @@ Este repositorio contiene el código fuente y la documentación para el diseño 
 - Iván Herrera: Orquestación de pruebas, validación integral y discusión de resultados.
 
 # Estructura del repositorio:
+```text
 /
 ├── .gitignore                 # Archivos ignorados por git (entornos virtuales, credenciales)
-
 ├── requirements.txt           # Dependencias del proyecto
-
 ├── README.md                  # Documentación principal del repositorio
-
 ├── docs/
-
-│   └── informe_tecnico.ipynb  # Informe técnico consolidado (PDF)
-
+│   └── informe_tecnico.ipynb  # Informe técnico consolidado (Jupyter Notebook / PDF)
 └── src/
-
     ├── 01_db_connection.py    # Conexión a MongoDB Atlas
-    
     ├── 02_seed_data.py        # Poblamiento de datos iniciales
-    
     ├── 03_crud_operations.py  # Operaciones CRUD y actualizaciones
-    
     ├── 04_query_filters.py    # Consultas avanzadas
-    
     ├── 05_aggregations.py     # Pipelines de agregación
-    
     └── 06_main_runner.py      # Orquestador de ejecución
-    
 
 # Requisitos:
 - Python 3.11.+
