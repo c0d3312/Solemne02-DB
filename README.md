@@ -11,6 +11,7 @@ Este repositorio contiene el código fuente y la documentación para el diseño 
 - Iván Herrera: Orquestación de pruebas, validación integral y discusión de resultados.
 
 # Estructura del repositorio:
+/
 ├── .gitignore                 # Archivos ignorados por git (entornos virtuales, credenciales)
 
 ├── requirements.txt           # Dependencias del proyecto
