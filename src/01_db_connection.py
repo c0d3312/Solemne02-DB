@@ -62,6 +62,19 @@ def setup_schema_validators(db):
             "properties": {
                 "id_dispositivo": {"bsonType": "objectId"},
                 "fecha_hora": {"bsonType": "date"},
+                "lecturas": {
+                    "bsonType": "array",
+                    "minItems": 1,
+                    "items": {
+                        "bsonType": "object",
+                        "required": ["tipo", "valor", "unidad"],
+                        "properties": {
+                            "tipo": {"bsonType": "string"},
+                            "valor": {"bsonType": ["double", "int", "long", "decimal"]},
+                            "unidad": {"bsonType": "string"}
+                        }
+                    }
+                },
                 "temperatura": {"bsonType": ["double", "int"]},
                 "humedad": {"bsonType": ["double", "int"]},
                 "co2": {"bsonType": ["double", "int"]}

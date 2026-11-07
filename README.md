@@ -36,12 +36,19 @@ Este repositorio contiene el código fuente y la documentación para el diseño 
   cd Solemne02-DB
 2. Crear y activar un entorno virtual:
    python -m venv venv
-   venv\Scripts\activate
+   .\venv\Scripts\Activate.ps1
 3. Instalar dependencias
-   pip install -r rquirements.txt
+   python -m pip install -r requirements.txt
 4. Configurar variables de entorno:
-   Crear un archivo llamado ".env" en la raíz del proyecto (este archivo debe estar ignorado en Git por seguridad) y agregar la cadena de conexión a MongoDB Atlas:
-      '''env
-       mongosh "mongodb+srv://clustersolemne02db.ebgilud.mongodb.net/" --apiVersion 1 --username <db_username>
+   Crear un archivo `.env` en la raíz del proyecto (no subirlo a Git) con la URI de conexión de MongoDB Atlas:
+   ```env
+   MONGO_URI="mongodb+srv://<usuario>:<contraseña>@<cluster-url>/?retryWrites=true&w=majority"
+   ```
 5. Ejecutar los scripts
    python src/06_main_runner.py
+
+El script principal configura los validadores, carga los datos de `data/sample_data.json`
+sin duplicarlos y ejecuta ejemplos de lectura, actualización y eliminación. Las mediciones
+usan una lista `lecturas` con tipo, valor y unidad, por lo que un mismo documento puede
+contener variables distintas (por ejemplo, temperatura y humedad) y se pueden incorporar
+nuevos tipos de sensor sin cambiar el esquema.

@@ -1,1 +1,88 @@
-
+{
+  "espacios": [
+    {
+      "nombre": "Sala A-101",
+      "tipo": "Aula",
+      "capacidad": 40,
+      "edificio": "Edificio A"
+    },
+    {
+      "nombre": "Laboratorio IoT",
+      "tipo": "Laboratorio",
+      "capacidad": 24,
+      "edificio": "Edificio de Tecnologia"
+    },
+    {
+      "nombre": "Biblioteca Central",
+      "tipo": "Biblioteca",
+      "capacidad": 120,
+      "edificio": "Edificio Central"
+    }
+  ],
+  "dispositivos": [
+    {
+      "id_dispositivo": "SEN-TEMP-101",
+      "tipo_sensor": ["temperatura", "humedad"],
+      "espacio": "Sala A-101",
+      "estado": "Activo"
+    },
+    {
+      "id_dispositivo": "SEN-CO2-LAB",
+      "tipo_sensor": ["co2", "temperatura"],
+      "espacio": "Laboratorio IoT",
+      "estado": "Activo"
+    },
+    {
+      "id_dispositivo": "SEN-LUX-BIB",
+      "tipo_sensor": ["luminosidad"],
+      "espacio": "Biblioteca Central",
+      "estado": "Activo"
+    }
+  ],
+  "mediciones": [
+    {
+      "id_medicion": "MED-001",
+      "dispositivo": "SEN-TEMP-101",
+      "fecha_hora": "2026-11-06T09:00:00Z",
+      "lecturas": [
+        {"tipo": "temperatura", "valor": 22.4, "unidad": "C"},
+        {"tipo": "humedad", "valor": 48, "unidad": "%"}
+      ]
+    },
+    {
+      "id_medicion": "MED-002",
+      "dispositivo": "SEN-CO2-LAB",
+      "fecha_hora": "2026-11-06T09:05:00Z",
+      "lecturas": [
+        {"tipo": "co2", "valor": 1180, "unidad": "ppm"},
+        {"tipo": "temperatura", "valor": 24.1, "unidad": "C"}
+      ]
+    },
+    {
+      "id_medicion": "MED-003",
+      "dispositivo": "SEN-LUX-BIB",
+      "fecha_hora": "2026-11-06T09:10:00Z",
+      "lecturas": [
+        {"tipo": "luminosidad", "valor": 360, "unidad": "lux"}
+      ]
+    },
+    {
+      "id_medicion": "MED-004",
+      "dispositivo": "SEN-TEMP-101",
+      "fecha_hora": "2026-11-06T09:15:00Z",
+      "lecturas": [
+        {"tipo": "temperatura", "valor": 23.0, "unidad": "C"},
+        {"tipo": "humedad", "valor": 51, "unidad": "%"}
+      ]
+    },
+    {
+      "id_medicion": "MED-DEMO-DELETE",
+      "dispositivo": "SEN-LUX-BIB",
+      "fecha_hora": "2026-11-06T09:20:00Z",
+      "etiqueta": "registro_temporal_demo",
+      "lecturas": [
+        {"tipo": "luminosidad", "valor": 410, "unidad": "lux"}
+      ]
+    }
+  ]
+}
