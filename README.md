@@ -25,6 +25,7 @@ Este repositorio contiene el código fuente y la documentación para el diseño 
     ├── 04_query_filters.py    # Consultas avanzadas
     ├── 05_aggregations.py     # Pipelines de agregación
     └── 06_main_runner.py      # Orquestador de ejecución
+```
 
 # Requisitos:
 - Python 3.11.+

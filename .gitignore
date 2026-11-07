@@ -1,24 +1,11 @@
-.venv/
+# Entornos virtuales
 venv/
 env/
-
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.mypy_cache/
-
 .env
-.env.*
-!.env.example
 
-*.sqlite3
-*.sqlite3-journal
-db.sqlite3
+# Archivos de caché de Python
+__pycache__/
+*.pyc
 
-staticfiles/
-media/
-
-.DS_Store
-Thumbs.db
-
-backups/
+# Jupyter Notebooks
+.ipynb_checkpoints/
