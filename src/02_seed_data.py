@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def seed_data(db, sample_data_path=None):
-    """Carga espacios, dispositivos y mediciones de ejemplo sin duplicarlos."""
+    # Carga espacios, dispositivos y mediciones de ejemplo sin duplicarlos.
     data_path = sample_data_path or (
         Path(__file__).resolve().parents[1] / "data" / "sample_data.json"
     )
@@ -23,6 +23,32 @@ def seed_data(db, sample_data_path=None):
         partialFilterExpression={"id_medicion": {"$type": "string"}},
     )
 
+    # Resolver los espacios existentes para no duplicar inserciones.
+    nombres_existentes = {
+        documento["nombre"]
+        for documento in espacios.find({}, {"nombre": 1, "_id": 0})
+    }
+    espacios_nuevos = [
+        espacio for espacio in sample_data["espacios"]
+        if espacio["nombre"] not in nombres_existentes
+    ]
+
+    # Demuestra la insercion individual antes de insertar el resto en lote.
+    if espacios_nuevos:
+        resultado_uno = espacios.insert_one(espacios_nuevos[0])
+        print(f"insert_one: espacio {espacios_nuevos[0]['nombre']} insertado con id {resultado_uno.inserted_id}.")
+        espacios_nuevos = espacios_nuevos[1:]
+    else:
+        print("insert_one: no hay espacios nuevos para insertar.")
+
+    # El lote reduce los viajes a MongoDB para los espacios restantes.
+    if espacios_nuevos:
+        resultado_masivo = espacios.insert_many(espacios_nuevos)
+        print(f"insert_many: {len(resultado_masivo.inserted_ids)} espacios insertados.")
+    else:
+        print("insert_many: no hay espacios nuevos para insertar.")
+
+    # Actualiza todos los espacios para mantener los atributos heterogeneos al dia.
     for espacio in sample_data["espacios"]:
         espacios.update_one(
             {"nombre": espacio["nombre"]},
@@ -37,6 +63,12 @@ def seed_data(db, sample_data_path=None):
         for espacio in sample_data["espacios"]
     }
 
+    # Resolver los dispositivos existentes para no duplicar inserciones.
+    codigos_existentes = {
+        documento["id_dispositivo"]
+        for documento in dispositivos.find({}, {"id_dispositivo": 1, "_id": 0})
+    }
+    documentos_dispositivo = []
     for dispositivo in sample_data["dispositivos"]:
         documento = {
             key: value
@@ -44,6 +76,30 @@ def seed_data(db, sample_data_path=None):
             if key != "espacio"
         }
         documento["id_espacio"] = espacio_ids[dispositivo["espacio"]]
+        documentos_dispositivo.append(documento)
+
+    dispositivos_nuevos = [
+        documento for documento in documentos_dispositivo
+        if documento["id_dispositivo"] not in codigos_existentes
+    ]
+
+    # Demuestra la insercion individual antes de insertar el resto en lote.
+    if dispositivos_nuevos:
+        resultado_uno = dispositivos.insert_one(dispositivos_nuevos[0])
+        print(f"insert_one: dispositivo {dispositivos_nuevos[0]['id_dispositivo']} insertado con id {resultado_uno.inserted_id}.")
+        dispositivos_nuevos = dispositivos_nuevos[1:]
+    else:
+        print("insert_one: no hay dispositivos nuevos para insertar.")
+
+    # El lote reduce los viajes a MongoDB para los dispositivos restantes.
+    if dispositivos_nuevos:
+        resultado_masivo = dispositivos.insert_many(dispositivos_nuevos)
+        print(f"insert_many: {len(resultado_masivo.inserted_ids)} dispositivos insertados.")
+    else:
+        print("insert_many: no hay dispositivos nuevos para insertar.")
+
+    # Actualiza todos los dispositivos para mantener los atributos heterogeneos al dia.
+    for documento in documentos_dispositivo:
         dispositivos.update_one(
             {"id_dispositivo": documento["id_dispositivo"]},
             {"$set": documento},

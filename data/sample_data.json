@@ -1,87 +1,363 @@
 {
   "espacios": [
     {
-      "nombre": "Sala A-101",
+      "nombre": "Aula 101",
       "tipo": "Aula",
       "capacidad": 40,
-      "edificio": "Edificio A"
+      "edificio": "Edificio A",
+      "ubicacion": { "type": "Point", "coordinates": [-70.6120, -33.4510] },
+      "responsable": { "nombre": "Ana Rojas", "correo": "ana.rojas@universidad.cl", "telefono": "+56 9 1234 5678" },
+      "horario": { "apertura": "08:00", "cierre": "22:00", "dias": ["lun", "mar", "mie", "jue", "vie"] },
+      "umbrales": { "temperatura_c": { "min": 18, "max": 26 }, "humedad_pct": { "min": 30, "max": 60 }, "co2_ppm": { "max": 1000 }, "luminosidad_lux": { "min": 300, "max": 800 } }
+    },
+    {
+      "nombre": "Aula 201",
+      "tipo": "Aula",
+      "capacidad": 40,
+      "edificio": "Edificio A",
+      "ubicacion": { "type": "Point", "coordinates": [-70.6122, -33.4513] },
+      "responsable": { "nombre": "Carlos Vega", "correo": "carlos.vega@universidad.cl", "telefono": "+56 9 2345 6789" },
+      "horario": { "apertura": "08:00", "cierre": "20:00", "dias": ["lun", "mar", "mie", "jue", "vie", "sab"] },
+      "umbrales": { "temperatura_c": { "min": 18, "max": 26 }, "humedad_pct": { "min": 30, "max": 60 }, "co2_ppm": { "max": 1000 }, "luminosidad_lux": { "min": 300, "max": 800 } }
+    },
+    {
+      "nombre": "Laboratorio de Redes",
+      "tipo": "Laboratorio",
+      "capacidad": 30,
+      "edificio": "Edificio A",
+      "ubicacion": { "type": "Point", "coordinates": [-70.6125, -33.4516] },
+      "responsable": { "nombre": "Diego Fuentes", "correo": "diego.fuentes@universidad.cl", "telefono": "+56 9 3456 7890" },
+      "horario": { "apertura": "09:00", "cierre": "18:00", "dias": ["lun", "mar", "mie", "jue", "vie"] },
+      "umbrales": { "temperatura_c": { "min": 16, "max": 28 }, "humedad_pct": { "min": 30, "max": 70 }, "co2_ppm": { "max": 800 }, "luminosidad_lux": { "min": 400, "max": 1000 } }
     },
     {
       "nombre": "Laboratorio IoT",
       "tipo": "Laboratorio",
       "capacidad": 24,
-      "edificio": "Edificio de Tecnologia"
+      "edificio": "Edificio B",
+      "ubicacion": { "type": "Point", "coordinates": [-70.6130, -33.4520] },
+      "responsable": { "nombre": "Felipe Gonzalez", "correo": "felipe.gonzalez@universidad.cl", "telefono": "+56 9 4567 8901" },
+      "horario": { "apertura": "08:00", "cierre": "20:00", "dias": ["lun", "mar", "mie", "jue", "vie"] },
+      "umbrales": { "temperatura_c": { "min": 16, "max": 28 }, "humedad_pct": { "min": 30, "max": 70 }, "co2_ppm": { "max": 800 }, "luminosidad_lux": { "min": 400, "max": 1000 } }
+    },
+    {
+      "nombre": "Laboratorio de Electronica",
+      "tipo": "Laboratorio",
+      "capacidad": 20,
+      "edificio": "Edificio B",
+      "ubicacion": { "type": "Point", "coordinates": [-70.6132, -33.4522] },
+      "responsable": { "nombre": "Felipe Gonzalez", "correo": "felipe.gonzalez@universidad.cl", "telefono": "+56 9 4567 8901" },
+      "horario": { "apertura": "09:00", "cierre": "17:00", "dias": ["lun", "mar", "mie", "jue", "vie"] },
+      "umbrales": { "temperatura_c": { "min": 16, "max": 28 }, "humedad_pct": { "min": 30, "max": 70 }, "co2_ppm": { "max": 800 }, "luminosidad_lux": { "min": 400, "max": 1000 } }
     },
     {
       "nombre": "Biblioteca Central",
       "tipo": "Biblioteca",
       "capacidad": 120,
-      "edificio": "Edificio Central"
+      "edificio": "Edificio Central",
+      "ubicacion": { "type": "Point", "coordinates": [-70.6100, -33.4500] },
+      "responsable": { "nombre": "Maria Lopez", "correo": "maria.lopez@universidad.cl", "telefono": "+56 9 5678 9012" },
+      "horario": { "apertura": "08:00", "cierre": "22:00", "dias": ["lun", "mar", "mie", "jue", "vie", "sab", "dom"] },
+      "umbrales": { "temperatura_c": { "min": 20, "max": 24 }, "humedad_pct": { "min": 40, "max": 60 }, "co2_ppm": { "max": 1000 }, "luminosidad_lux": { "min": 300, "max": 600 } }
+    },
+    {
+      "nombre": "Sala de Estudio 201",
+      "tipo": "Espacio Común",
+      "capacidad": 60,
+      "edificio": "Edificio Central",
+      "ubicacion": { "type": "Point", "coordinates": [-70.6102, -33.4503] },
+      "responsable": { "nombre": "Maria Lopez", "correo": "maria.lopez@universidad.cl", "telefono": "+56 9 5678 9012" },
+      "horario": { "apertura": "08:00", "cierre": "22:00", "dias": ["lun", "mar", "mie", "jue", "vie", "sab", "dom"] },
+      "umbrales": { "temperatura_c": { "min": 18, "max": 26 }, "humedad_pct": { "min": 30, "max": 65 }, "co2_ppm": { "max": 1000 }, "luminosidad_lux": { "min": 300, "max": 800 } }
+    },
+    {
+      "nombre": "Auditorio Principal",
+      "tipo": "Espacio Común",
+      "capacidad": 150,
+      "edificio": "Edificio D",
+      "ubicacion": { "type": "Point", "coordinates": [-70.6140, -33.4530] },
+      "responsable": { "nombre": "Roberto Diaz", "correo": "roberto.diaz@universidad.cl", "telefono": "+56 9 6789 0123" },
+      "horario": { "apertura": "08:00", "cierre": "23:00", "dias": ["lun", "mar", "mie", "jue", "vie"] },
+      "umbrales": { "temperatura_c": { "min": 18, "max": 26 }, "humedad_pct": { "min": 35, "max": 65 }, "co2_ppm": { "max": 1200 }, "luminosidad_lux": { "min": 200, "max": 500 } }
+    },
+    {
+      "nombre": "Sala de Reuniones",
+      "tipo": "Aula",
+      "capacidad": 12,
+      "edificio": "Edificio D",
+      "ubicacion": { "type": "Point", "coordinates": [-70.6142, -33.4532] },
+      "responsable": { "nombre": "Roberto Diaz", "correo": "roberto.diaz@universidad.cl", "telefono": "+56 9 6789 0123" },
+      "horario": { "apertura": "08:00", "cierre": "18:00", "dias": ["lun", "mar", "mie", "jue", "vie"] },
+      "umbrales": { "temperatura_c": { "min": 20, "max": 25 }, "humedad_pct": { "min": 35, "max": 55 }, "co2_ppm": { "max": 1000 }, "luminosidad_lux": { "min": 300, "max": 600 } }
+    },
+    {
+      "nombre": "Aula 102",
+      "tipo": "Aula",
+      "capacidad": 35,
+      "edificio": "Edificio A",
+      "ubicacion": { "type": "Point", "coordinates": [-70.6121, -33.4511] },
+      "responsable": { "nombre": "Ana Rojas", "correo": "ana.rojas@universidad.cl", "telefono": "+56 9 1234 5678" },
+      "horario": { "apertura": "08:00", "cierre": "20:00", "dias": ["lun", "mar", "mie", "jue", "vie"] },
+      "umbrales": { "temperatura_c": { "min": 18, "max": 26 }, "humedad_pct": { "min": 30, "max": 60 }, "co2_ppm": { "max": 1000 }, "luminosidad_lux": { "min": 300, "max": 800 } }
+    },
+    {
+      "nombre": "Taller de Mecatronica",
+      "tipo": "Laboratorio",
+      "capacidad": 18,
+      "edificio": "Edificio B",
+      "ubicacion": { "type": "Point", "coordinates": [-70.6131, -33.4521] },
+      "responsable": { "nombre": "Felipe Gonzalez", "correo": "felipe.gonzalez@universidad.cl", "telefono": "+56 9 4567 8901" },
+      "horario": { "apertura": "09:00", "cierre": "17:00", "dias": ["lun", "mar", "mie", "jue", "vie"] },
+      "umbrales": { "temperatura_c": { "min": 16, "max": 28 }, "humedad_pct": { "min": 30, "max": 70 }, "co2_ppm": { "max": 800 }, "luminosidad_lux": { "min": 400, "max": 1000 } }
+    },
+    {
+      "nombre": "Centro de Computo",
+      "tipo": "Espacio Común",
+      "capacidad": 40,
+      "edificio": "Edificio Central",
+      "ubicacion": { "type": "Point", "coordinates": [-70.6103, -33.4504] },
+      "responsable": { "nombre": "Maria Lopez", "correo": "maria.lopez@universidad.cl", "telefono": "+56 9 5678 9012" },
+      "horario": { "apertura": "08:00", "cierre": "22:00", "dias": ["lun", "mar", "mie", "jue", "vie", "sab"] },
+      "umbrales": { "temperatura_c": { "min": 18, "max": 26 }, "humedad_pct": { "min": 30, "max": 65 }, "co2_ppm": { "max": 1000 }, "luminosidad_lux": { "min": 300, "max": 800 } }
     }
   ],
   "dispositivos": [
     {
-      "id_dispositivo": "SEN-TEMP-101",
+      "id_dispositivo": "SEN-TH-001",
       "tipo_sensor": ["temperatura", "humedad"],
-      "espacio": "Sala A-101",
-      "estado": "Activo"
+      "espacio": "Aula 101",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "DHT22", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 3.3, "firmware": "v2.1.0", "precision": 0.5 },
+      "etiquetas": ["temperatura", "humedad", "aula"]
     },
     {
-      "id_dispositivo": "SEN-CO2-LAB",
+      "id_dispositivo": "SEN-CO2-001",
+      "tipo_sensor": ["co2", "temperatura"],
+      "espacio": "Aula 101",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "MH-Z19C", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 5.0, "firmware": "v1.4.2", "precision": 50 },
+      "etiquetas": ["co2", "aula", "calidad_aire"]
+    },
+    {
+      "id_dispositivo": "SEN-TH-002",
+      "tipo_sensor": ["temperatura", "humedad"],
+      "espacio": "Aula 201",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "SHT31", "fabricante": "SenseLab", "protocolo": "I2C", "voltaje": 3.3, "firmware": "v2.2.0", "precision": 0.3 },
+      "etiquetas": ["temperatura", "humedad", "aula"]
+    },
+    {
+      "id_dispositivo": "SEN-LUX-001",
+      "tipo_sensor": ["luminosidad"],
+      "espacio": "Aula 201",
+      "estado": "Mantenimiento",
+      "especificaciones": { "modelo": "BH1750", "fabricante": "SenseLab", "protocolo": "I2C", "voltaje": 3.3, "firmware": "v1.2.0", "precision": 1 },
+      "etiquetas": ["luminosidad", "aula"]
+    },
+    {
+      "id_dispositivo": "SEN-EA-001",
+      "tipo_sensor": ["temperatura", "humedad", "co2", "presion"],
+      "espacio": "Laboratorio de Redes",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "WeatherStation Pro", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 5.0, "firmware": "v3.0.0", "precision": 0.1 },
+      "etiquetas": ["temperatura", "humedad", "presion", "co2", "laboratorio"]
+    },
+    {
+      "id_dispositivo": "SEN-CA-001",
+      "tipo_sensor": ["pm25", "pm10"],
+      "espacio": "Laboratorio de Redes",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "PMS5003", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 5.0, "firmware": "v1.0.5", "precision": 10 },
+      "etiquetas": ["pm25", "pm10", "laboratorio", "calidad_aire"]
+    },
+    {
+      "id_dispositivo": "SEN-TH-003",
+      "tipo_sensor": ["temperatura", "humedad"],
+      "espacio": "Laboratorio IoT",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "DHT22", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 3.3, "firmware": "v2.1.0", "precision": 0.5 },
+      "etiquetas": ["temperatura", "humedad", "laboratorio"]
+    },
+    {
+      "id_dispositivo": "SEN-CO2-002",
       "tipo_sensor": ["co2", "temperatura"],
       "espacio": "Laboratorio IoT",
-      "estado": "Activo"
+      "estado": "Activo",
+      "especificaciones": { "modelo": "SenseAir S8", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 5.0, "firmware": "v1.5.0", "precision": 30 },
+      "etiquetas": ["co2", "laboratorio", "calidad_aire"]
     },
     {
-      "id_dispositivo": "SEN-LUX-BIB",
+      "id_dispositivo": "SEN-TH-004",
+      "tipo_sensor": ["temperatura", "humedad"],
+      "espacio": "Laboratorio de Electronica",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "SHT31", "fabricante": "SenseLab", "protocolo": "I2C", "voltaje": 3.3, "firmware": "v2.2.0", "precision": 0.3 },
+      "etiquetas": ["temperatura", "humedad", "laboratorio"]
+    },
+    {
+      "id_dispositivo": "SEN-LUX-002",
       "tipo_sensor": ["luminosidad"],
+      "espacio": "Laboratorio de Electronica",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "BH1750", "fabricante": "SenseLab", "protocolo": "I2C", "voltaje": 3.3, "firmware": "v1.2.0", "precision": 1 },
+      "etiquetas": ["luminosidad", "laboratorio"]
+    },
+    {
+      "id_dispositivo": "SEN-TH-005",
+      "tipo_sensor": ["temperatura", "humedad"],
       "espacio": "Biblioteca Central",
-      "estado": "Activo"
+      "estado": "Activo",
+      "especificaciones": { "modelo": "DHT22", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 3.3, "firmware": "v2.1.0", "precision": 0.5 },
+      "etiquetas": ["temperatura", "humedad", "biblioteca"]
+    },
+    {
+      "id_dispositivo": "SEN-CO2-003",
+      "tipo_sensor": ["co2", "temperatura"],
+      "espacio": "Biblioteca Central",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "MH-Z19C", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 5.0, "firmware": "v1.4.2", "precision": 50 },
+      "etiquetas": ["co2", "biblioteca", "calidad_aire"]
+    },
+    {
+      "id_dispositivo": "SEN-EA-002",
+      "tipo_sensor": ["temperatura", "humedad", "co2", "presion"],
+      "espacio": "Sala de Estudio 201",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "WeatherStation Pro", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 5.0, "firmware": "v3.0.0", "precision": 0.1 },
+      "etiquetas": ["temperatura", "humedad", "presion", "co2", "espacio_comun"]
+    },
+    {
+      "id_dispositivo": "SEN-LUX-003",
+      "tipo_sensor": ["luminosidad"],
+      "espacio": "Sala de Estudio 201",
+      "estado": "Inactivo",
+      "especificaciones": { "modelo": "BH1750", "fabricante": "SenseLab", "protocolo": "I2C", "voltaje": 3.3, "firmware": "v1.2.0", "precision": 1 },
+      "etiquetas": ["luminosidad", "espacio_comun"]
+    },
+    {
+      "id_dispositivo": "SEN-TH-006",
+      "tipo_sensor": ["temperatura", "humedad"],
+      "espacio": "Auditorio Principal",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "DHT22", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 3.3, "firmware": "v2.1.0", "precision": 0.5 },
+      "etiquetas": ["temperatura", "humedad", "auditorio"]
+    },
+    {
+      "id_dispositivo": "SEN-CO2-004",
+      "tipo_sensor": ["co2", "temperatura"],
+      "espacio": "Auditorio Principal",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "SenseAir S8", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 5.0, "firmware": "v1.5.0", "precision": 30 },
+      "etiquetas": ["co2", "auditorio", "calidad_aire"]
+    },
+    {
+      "id_dispositivo": "SEN-TH-007",
+      "tipo_sensor": ["temperatura", "humedad"],
+      "espacio": "Sala de Reuniones",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "SHT31", "fabricante": "SenseLab", "protocolo": "I2C", "voltaje": 3.3, "firmware": "v2.2.0", "precision": 0.3 },
+      "etiquetas": ["temperatura", "humedad", "oficina"]
+    },
+    {
+      "id_dispositivo": "SEN-CA-002",
+      "tipo_sensor": ["pm25", "pm10"],
+      "espacio": "Sala de Reuniones",
+      "estado": "Mantenimiento",
+      "especificaciones": { "modelo": "PMS5003", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 5.0, "firmware": "v1.0.5", "precision": 10 },
+      "etiquetas": ["pm25", "pm10", "oficina", "calidad_aire"]
+    },
+    {
+      "id_dispositivo": "SEN-TH-008",
+      "tipo_sensor": ["temperatura", "humedad"],
+      "espacio": "Aula 102",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "DHT22", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 3.3, "firmware": "v2.1.0", "precision": 0.5 },
+      "etiquetas": ["temperatura", "humedad", "aula"]
+    },
+    {
+      "id_dispositivo": "SEN-LUX-004",
+      "tipo_sensor": ["luminosidad"],
+      "espacio": "Aula 102",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "BH1750", "fabricante": "SenseLab", "protocolo": "I2C", "voltaje": 3.3, "firmware": "v1.2.0", "precision": 1 },
+      "etiquetas": ["luminosidad", "aula"]
+    },
+    {
+      "id_dispositivo": "SEN-TH-009",
+      "tipo_sensor": ["temperatura", "humedad"],
+      "espacio": "Taller de Mecatronica",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "DHT22", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 3.3, "firmware": "v2.1.0", "precision": 0.5 },
+      "etiquetas": ["temperatura", "humedad", "laboratorio"]
+    },
+    {
+      "id_dispositivo": "SEN-CO2-005",
+      "tipo_sensor": ["co2", "temperatura"],
+      "espacio": "Taller de Mecatronica",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "MH-Z19C", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 5.0, "firmware": "v1.4.2", "precision": 50 },
+      "etiquetas": ["co2", "laboratorio", "calidad_aire"]
+    },
+    {
+      "id_dispositivo": "SEN-EA-003",
+      "tipo_sensor": ["temperatura", "humedad", "co2", "presion"],
+      "espacio": "Centro de Computo",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "WeatherStation Pro", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 5.0, "firmware": "v3.0.0", "precision": 0.1 },
+      "etiquetas": ["temperatura", "humedad", "presion", "co2", "espacio_comun"]
+    },
+    {
+      "id_dispositivo": "SEN-CA-003",
+      "tipo_sensor": ["pm25", "pm10"],
+      "espacio": "Centro de Computo",
+      "estado": "Activo",
+      "especificaciones": { "modelo": "PMS5003", "fabricante": "SenseLab", "protocolo": "MQTT", "voltaje": 5.0, "firmware": "v1.0.5", "precision": 10 },
+      "etiquetas": ["pm25", "pm10", "espacio_comun", "calidad_aire"]
     }
   ],
   "mediciones": [
     {
       "id_medicion": "MED-001",
-      "dispositivo": "SEN-TEMP-101",
+      "dispositivo": "SEN-TH-001",
       "fecha_hora": "2026-11-06T09:00:00Z",
       "lecturas": [
-        {"tipo": "temperatura", "valor": 22.4, "unidad": "C"},
-        {"tipo": "humedad", "valor": 48, "unidad": "%"}
+        { "tipo": "temperatura", "valor": 22.4, "unidad": "C" },
+        { "tipo": "humedad", "valor": 48, "unidad": "%" }
       ]
     },
     {
       "id_medicion": "MED-002",
-      "dispositivo": "SEN-CO2-LAB",
+      "dispositivo": "SEN-CO2-001",
       "fecha_hora": "2026-11-06T09:05:00Z",
       "lecturas": [
-        {"tipo": "co2", "valor": 1180, "unidad": "ppm"},
-        {"tipo": "temperatura", "valor": 24.1, "unidad": "C"}
+        { "tipo": "co2", "valor": 1180, "unidad": "ppm" },
+        { "tipo": "temperatura", "valor": 24.1, "unidad": "C" }
       ]
     },
     {
       "id_medicion": "MED-003",
-      "dispositivo": "SEN-LUX-BIB",
+      "dispositivo": "SEN-LUX-001",
       "fecha_hora": "2026-11-06T09:10:00Z",
       "lecturas": [
-        {"tipo": "luminosidad", "valor": 360, "unidad": "lux"}
+        { "tipo": "luminosidad", "valor": 360, "unidad": "lux" }
       ]
     },
     {
       "id_medicion": "MED-004",
-      "dispositivo": "SEN-TEMP-101",
+      "dispositivo": "SEN-TH-001",
       "fecha_hora": "2026-11-06T09:15:00Z",
       "lecturas": [
-        {"tipo": "temperatura", "valor": 23.0, "unidad": "C"},
-        {"tipo": "humedad", "valor": 51, "unidad": "%"}
+        { "tipo": "temperatura", "valor": 23.0, "unidad": "C" },
+        { "tipo": "humedad", "valor": 51, "unidad": "%" }
       ]
     },
     {
       "id_medicion": "MED-DEMO-DELETE",
-      "dispositivo": "SEN-LUX-BIB",
+      "dispositivo": "SEN-LUX-001",
       "fecha_hora": "2026-11-06T09:20:00Z",
       "etiqueta": "registro_temporal_demo",
       "lecturas": [
-        {"tipo": "luminosidad", "valor": 410, "unidad": "lux"}
+        { "tipo": "luminosidad", "valor": 410, "unidad": "lux" }
       ]
     }
   ]

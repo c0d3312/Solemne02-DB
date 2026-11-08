@@ -7,7 +7,7 @@ from pymongo.errors import ConnectionFailure, OperationFailure
 load_dotenv()
 
 def get_database():
-    """Establece la conexión con MongoDB Atlas y retorna la base de datos."""
+    # Establece la conexión con MongoDB Atlas y retorna la base de datos.
     uri = os.getenv("MONGO_URI")
     if not uri:
         raise ValueError("No se encontró MONGO_URI en el archivo .env")
@@ -18,14 +18,14 @@ def get_database():
         client.admin.command('ping')
         print("Conexión exitosa a MongoDB Atlas.")  
         #Seleccionar/Crear la base de datos del proyecto
-        db = client['campus_inteligente']
+        db = client[os.getenv("MONGO_DB", "campus_inteligente")]
         return db
     except ConnectionFailure as e:
         print(f"Error de conexión: {e}")
         return None
 
 def setup_schema_validators(db):
-    """Aplica validadores de esquema ($jsonSchema) a las colecciones principales."""
+    # Aplica validadores de esquema ($jsonSchema) a las colecciones principales.
     #Validador para Espacios
     espacios_validator = {
         "$jsonSchema": {
