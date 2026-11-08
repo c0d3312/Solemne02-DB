@@ -82,11 +82,56 @@ def setup_schema_validators(db):
         }
     }
 
+    #Validador para Alertas
+    alertas_validator = {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "required": ["id_espacio", "id_dispositivo", "tipo", "severidad", "estado", "fecha_generacion", "mensaje"],
+            "properties": {
+                "id_espacio": {"bsonType": "objectId", "description": "Referencia al espacio donde se generó la alerta"},
+                "id_dispositivo": {"bsonType": "objectId", "description": "Referencia al dispositivo que originó la alerta"},
+                "id_medicion": {"bsonType": "objectId", "description": "Referencia a la medición que disparó la alerta"},
+                "tipo": {
+                    "bsonType": "string",
+                    "enum": ["temperatura_alta", "temperatura_baja", "humedad_alta", "humedad_baja",
+                             "co2_alto", "luminosidad_alta", "luminosidad_baja"],
+                    "description": "Tipo de umbral superado"
+                },
+                "severidad": {
+                    "bsonType": "string",
+                    "enum": ["Baja", "Media", "Alta", "Critica"],
+                    "description": "Nivel de severidad de la alerta"
+                },
+                "estado": {
+                    "bsonType": "string",
+                    "enum": ["Activa", "Reconocida", "Resuelta"],
+                    "description": "Estado actual de la alerta"
+                },
+                "fecha_generacion": {"bsonType": "date", "description": "Fecha y hora en que se generó la alerta"},
+                "fecha_resolucion": {"bsonType": "date", "description": "Fecha y hora en que se resolvió la alerta"},
+                "mensaje": {"bsonType": "string", "description": "Descripción legible de la alerta"},
+                "valor_registrado": {
+                    "bsonType": ["double", "int", "long", "decimal"],
+                    "description": "Valor que disparó la alerta"
+                },
+                "umbral_superado": {
+                    "bsonType": "object",
+                    "description": "Umbral min/max que fue superado",
+                    "properties": {
+                        "min": {"bsonType": ["double", "int", "long", "decimal"]},
+                        "max": {"bsonType": ["double", "int", "long", "decimal"]}
+                    }
+                }
+            }
+        }
+    }
+
     #Aplicar validadores creando o modificando las colecciones
     colecciones = {
         "espacios": espacios_validator,
         "dispositivos": dispositivos_validator,
-        "mediciones": mediciones_validator
+        "mediciones": mediciones_validator,
+        "alertas": alertas_validator
     }
 
     for coll_name, validator in colecciones.items():
