@@ -17,7 +17,7 @@ Este repositorio contiene el código fuente y la documentación para el diseño 
 ├── requirements.txt           # Dependencias del proyecto
 ├── README.md                  # Documentación principal del repositorio
 ├── docs/
-│   └── informe_tecnico.ipynb  # Informe técnico consolidado (Jupyter Notebook / PDF)
+│   └── Informe_Solemne02_MongoDB2.pdf  # Informe 
 └── src/
     ├── 01_db_connection.py    # Conexión a MongoDB Atlas
     ├── 02_seed_data.py        # Poblamiento de datos iniciales
